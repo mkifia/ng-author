@@ -39,3 +39,7 @@ récupérer tous les auteurs
 utiliser le service app/services/api.php avec parametre {method : 'getAuthors'}
 
 afficher les auteurs dans la template authors.html sous forme de tableau
+
+5) supprimer un auteur
+
+utiliser le service app/services/api.php avec parametre {method : 'deleteAuthor' , id_auteur:id}
