@@ -11,9 +11,7 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body ng-app="authorApp" class="container">
-	
-	<div data:ng-view></div>
+<body ng-app="authorApp">
 
 </body>
 </html>
