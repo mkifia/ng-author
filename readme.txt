@@ -67,3 +67,11 @@ desactiver le bouton de soumissions si tous les champs ne sont pas remplis (ng-d
 définir la fonction add dans le controller authorCtrl
 untiliser le service app/services/api.php avec
 parametre {method: addAuthor, nom:xxx, prenom:xxx, fonction:xxx}
+
+8) modifier un auteur
+definir dans app.js une url pour rediriger vers edit_author.html
+définir le controlleur homeCtrl pour la page d'accueil
+modifier home.html
+mettre un lien au niveau du bouton modifier de authos.html
+modifier edit_author.html pour mettre en place le formulaire de modification
+

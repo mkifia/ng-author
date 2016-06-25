@@ -1,5 +1,5 @@
 app.controller('authorsCtrl', ['$scope', '$http', '$route', function($scope, $http, $route){
-	$http.get('services/api.php', 
+	$http.get('services/api.php',
 	{
 		params : {method: 'getAuthors'}
 
@@ -31,12 +31,35 @@ app.controller('authorsCtrl', ['$scope', '$http', '$route', function($scope, $ht
 
 }]);
 
-app.controller('authorCtrl', ['$scope', '$http', '$routeParams', '$route', function($scope, $http, $routeParams){
-	$http.get('services/api.php', 
+app.controller('authorCtrl', ['$scope', '$http', '$routeParams', '$route', '$location', function($scope, $http, $routeParams, $route, $location){
+	$http.get('services/api.php',
 	{
 		params : {method: 'getAuthorById', id_auteur: $routeParams.id}
 
 	}).then(function(result) {
 		$scope.author = result.data[0];
+		$scope.authorNewName = $scope.author.nom;
+		$scope.authorNewPrename = $scope.author.prenom;
+		$scope.authorNewFunction = $scope.author.fonction;
 	})
+
+	$scope.update = function() {
+		$http.get('services/api.php',
+		{
+			params : {
+				method: 'editAuthor',
+				id_auteur: $routeParams.id,
+				nom: $scope.authorNewName,
+				prenom: $scope.authorNewPrename,
+				fonction: $scope.authorNewFunction
+			}
+
+		}).then(function(result) {
+			$location.path('authors');
+		})
+	}
+}])
+
+app.controller('homeCtrl', ['$scope', function($scope){
+
 }])
