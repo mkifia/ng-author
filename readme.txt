@@ -30,3 +30,11 @@ bower_components
 
 bower install angular-route
 inclure angular-route.min.js dans index.php
+
+4) ecrire le controlleur authorCtrl 
+
+récupérer tous les auteurs
+utiliser le service app/services/api.php avec parametre
+
+afficher les auteurs dans la template authors.html sous forme de tableau
+

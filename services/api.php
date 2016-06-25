@@ -3,27 +3,27 @@ error_reporting(1);
 include_once 'dbConnect.php';
 
 switch ($_REQUEST ['method']) {
-	case 'getAuteurs':
+	case 'getAuthors':
 		$res = $pdo->prepare('SELECT * FROM auteur');
 		$res->execute();
 		$res = $res->fetchAll(PDO::FETCH_ASSOC);
 		break;
-	case 'getAuteurById':
+	case 'getAuthorById':
 		$res = $pdo->prepare('SELECT * FROM auteur WHERE id_auteur = ?');
 		$res->execute(array($_REQUEST['id_auteur']));
 		$res = $res->fetchAll(PDO::FETCH_ASSOC);
 		break;
-	case 'addAuteur':
+	case 'addAuthor':
 		$res = $pdo->prepare('INSERT INTO auteur (nom, prenom, fonction) VALUES (?, ?, ?)');
 		$res->execute(array($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['fonction']));
 		$res = true;
 		break;
-	case 'deleteAuteur': 
+	case 'deleteAuthor': 
 		$res = $pdo->prepare('DELETE FROM auteur WHERE id_auteur = ?');
 		$res->execute(array($_REQUEST['id_auteur']));
 		$res = true;
 		break;
-	case 'editAuteur':
+	case 'editAuthor':
 		$res = $pdo->prepare('UPDATE auteur SET nom = ?, prenom = ?, fonction = ? WHERE id_auteur = ?');
 		$res->execute(array($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['fonction'], $_REQUEST['id_auteur']));
 		$res = true;
