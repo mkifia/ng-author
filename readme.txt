@@ -27,6 +27,9 @@ app
 bower_components
 services
 	api.php
+	auteur.sql
+	auteurs.json
+	dbConnect.php
 
 3) install angular-route et configuration des routes
 
