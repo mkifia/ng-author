@@ -54,3 +54,16 @@ recuperer les informations d'un auteur à l'aide de son id ($routeParams pour r�
 
 remplir la template author.html
 mettre un bouton de retour dans author.html
+
+7) ajouter un auteur
+
+ajouter un formulaire dans authors.html comportants 3 champs de saisie et un button de type submit
+utiliser novalidate dans la balise form pour désactiver le comportement du html5 sur la validation
+
+les trois champs sont requis (requiered)
+
+desactiver le bouton de soumissions si tous les champs ne sont pas remplis (ng-disabled="authorForm.$invalid")
+
+définir la fonction add dans le controller authorCtrl
+untiliser le service app/services/api.php avec
+parametre {method: addAuthor, nom:xxx, prenom:xxx, fonction:xxx}

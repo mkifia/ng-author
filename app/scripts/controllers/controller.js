@@ -16,12 +16,25 @@ app.controller('authorsCtrl', ['$scope', '$http', '$route', function($scope, $ht
 			$route.reload();
 		})
 	}
+
+	$scope.add = function() {
+
+		$http.get('services/api.php',
+		{
+			params : {
+				method: 'addAuthor', nom: $scope.authorName, prenom: $scope.authorPrename, fonction: $scope.authorFunction 
+			}
+		}).then(function(result) {
+			$route.reload();
+		})
+	}
+
 }]);
 
-app.controller('authorCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+app.controller('authorCtrl', ['$scope', '$http', '$routeParams', '$route', function($scope, $http, $routeParams){
 	$http.get('services/api.php', 
 	{
-		params : {method: 'getAuthorById', id_auteur:$routeParams.id}
+		params : {method: 'getAuthorById', id_auteur: $routeParams.id}
 
 	}).then(function(result) {
 		$scope.author = result.data[0];

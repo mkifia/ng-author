@@ -4,7 +4,7 @@ include_once 'dbConnect.php';
 
 switch ($_REQUEST ['method']) {
 	case 'getAuthors':
-		$res = $pdo->prepare('SELECT * FROM auteur');
+		$res = $pdo->prepare('SELECT * FROM auteur ORDER BY nom, prenom, fonction');
 		$res->execute();
 		$res = $res->fetchAll(PDO::FETCH_ASSOC);
 		break;
