@@ -25,6 +25,8 @@ app
 		edit_author.html
 		home.html
 bower_components
+services
+	api.php
 
 3) install angular-route et configuration des routes
 
