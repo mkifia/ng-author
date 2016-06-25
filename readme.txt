@@ -43,3 +43,12 @@ afficher les auteurs dans la template authors.html sous forme de tableau
 5) supprimer un auteur
 
 utiliser le service app/services/api.php avec parametre {method : 'deleteAuthor' , id_auteur:id}
+
+6) voir un auteur
+
+mettre des liens avec l'id de l'utilisateur pour voir le detail d'un auteur
+recuperer les informations d'un auteur à l'aide de son id ($routeParams pour récupérer l'id de l'url)
+remplir la template author.html
+mettre un bouton de retour dans author.html
+
+

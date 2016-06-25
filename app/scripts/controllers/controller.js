@@ -17,3 +17,13 @@ app.controller('authorsCtrl', ['$scope', '$http', '$route', function($scope, $ht
 		})
 	}
 }]);
+
+app.controller('authorCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+	$http.get('services/api.php', 
+	{
+		params : {method: 'getAuthorById', id_auteur:$routeParams.id}
+
+	}).then(function(result) {
+		$scope.author = result.data[0];
+	})
+}])

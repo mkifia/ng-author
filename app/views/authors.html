@@ -18,7 +18,7 @@
                 <td>{{author.fonction}}</td>
                 <td><button ng-click="update(author)" class="btn btn-warning">modifier</button></td>
                 <td><button ng-click="delete(author)" class="btn btn-danger">supprimer</button></td>
-                <td><button ng-click="view(author)" class="btn btn-danger">voir</button></td>
+                <td><a class="btn btn-default" ng-href="#/author/{{author.id_auteur}}" title="">voir</a></td>
             </tr>
         </tbody>
     </table>
