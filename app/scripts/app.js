@@ -6,7 +6,7 @@ app.config(function($routeProvider) {
 
 	$routeProvider.when('/', {
 		templateUrl : 'app/views/home.html',
-		controller : 'HomeCtrl'
+		controller : 'homeCtrl'
 
 	}).when('/authors', {
 		templateUrl : 'app/views/authors.html',
